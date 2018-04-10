@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+# glbrc_demo_project
+Solution to a simple programming assignment for GLBRC.
