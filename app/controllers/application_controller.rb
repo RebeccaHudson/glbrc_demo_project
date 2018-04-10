@@ -4,5 +4,7 @@ class ApplicationController < ActionController::Base
   def hello_world_action
       render html: "hello world first action."
   end
+ 
+  include SessionsHelper
 
 end
