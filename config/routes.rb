@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   get 'user_apps/add'
-
   get 'user_apps/remove'
-
   get 'user_apps/reorder'
-
+  get 'user_apps/use_defaults'
 
   get '/home', to: 'homepage#show_home'
   get 'homepage/show_home'

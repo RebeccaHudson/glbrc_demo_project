@@ -10,6 +10,7 @@ module SessionsHelper
 
   def log_out
     session.delete(:user_id) 
+    puts "running logout"
   end
 
 end

@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+     puts "destrying active session"
      log_out  #defined in SessionsHelper
      redirect_to login_url
   end
