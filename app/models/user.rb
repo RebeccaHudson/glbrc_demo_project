@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :userapps 
+  has_many :user_apps 
   
  
   def check_password(to_check)
