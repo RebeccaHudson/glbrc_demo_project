@@ -5,4 +5,9 @@ class Application < ApplicationRecord
         return default_status == "Yes"
     end
 
+    def add_for_user_path
+        #we called it!
+        raise Exception
+    end
+
 end
