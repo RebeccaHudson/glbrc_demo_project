@@ -3,11 +3,20 @@
 <span>pass in a test value, should appear here:  <%= @foobar %></span>
 <h2> TODOs </h2>
 <ol>
-  <li> Figure out how to show what user is logged in 
-  <p> the logged in user id is  <%= @user_shown %>
+  <li> Figure out how to show what user is logged in (done)
+     <p> the logged in user id is  <%= @user_shown %>
   </li>
-     
-  <li> Spit back to login if there is no user logged in </li>
+  <li> Spit back to login if there is no user logged in (done)  </li>
+  <li> Provide a link to add apps for this user                
+       <span> <%= link_to "Add App(s)", user_apps_add_url %> </span>
+  </li>
+  <li> Provide a link to remove apps for this user              
+       <span> <%= link_to "Remove App(s)", user_apps_remove_url %> <span>
+  </li>
+  
+  <li> Show apps available for this user.                       </li>
+  <li> Drag-and-droppable reordering of the links               </li>
+  <li> persist the results of reordering between logins         </li>
 </ol>
 
 <span> <%= link_to "Log Out", logout_path  , method: :delete %> </span>

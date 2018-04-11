@@ -1,2 +1,19 @@
 <h1>UserApps#add</h1>
 <p>Find me in app/views/user_apps/add.html.erb</p>
+
+<p> A page to add apps for this user: <%= @user_shown %>  </p>
+<h2> TODOs: </h2>
+<ol>
+<li> Show the id of the user who is logged in  </li>
+<li> Show the apps available that this user does not have </li>
+<li> provide a link on each available app that does the following  
+    <ol> 
+      <li> Creates a UserApp record for this user and this app.      </li>
+      <li> Removes that App from the list of apps available to add.  </li>
+    </ol>
+</li>
+<ol>
+
+<span> back home? : <%= link_to "Back Home", home_url %>  </span>
+
+
