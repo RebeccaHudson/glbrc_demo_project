@@ -6,12 +6,6 @@ class ApplicationController < ActionController::Base
   end
 
 
-  #deprecate: this got put into the Homepage controller.
-  def show_homepage
-      active_user_id = session[:user_id].to_s
-      render html: "homepage for user " + active_user_id
-  end
-
  
   include SessionsHelper
 
