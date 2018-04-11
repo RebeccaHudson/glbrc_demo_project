@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :userapps 
+  
+ 
   def check_password(to_check)
      #if to_check == "foo"
      if self.password == to_check
