@@ -1,6 +1,5 @@
-<h1>Homepage#show_home</h1>
-<p>Find me in app/views/homepage/show_home.html.erb</p>
-<span>pass in a test value, should appear here:  <%= @foobar %></span>
+<h1>Homepage for <%= @user.login %></h1>
+
 <h2> TODOs </h2>
 <ol>
   <li> Figure out how to show what user is logged in (done)
@@ -14,22 +13,32 @@
        <span> <%= link_to "Remove App(s)", user_apps_remove_url %> <span>
   </li>
   
-  <li> Show apps available for this user.                       
-       Apps available:
-       <ol>
-          <% if (@apps_to_show.empty?) %>
-              <p>There are no apps on your homepage. Add apps to see apps.</p>
-          <% end %>
-          <% @apps_to_show.each do |one_app| %>
-              <li><span> name : <%= one_app.name %></span>
-                  <span> description: <%= one_app.description %></span>
-              </li>
-          <% end %>
-       </ol>
-
-  </li>
+  <li> Show apps available for this user.    (done)             </li>
   <li> Drag-and-droppable reordering of the links               </li>
   <li> persist the results of reordering between logins         </li>
 </ol>
+
+ Apps available:
+ <ol>
+    <% if (@apps_to_show.empty?) %>
+        <p>There are no apps on your homepage. Add apps to see apps.</p>
+    <% end %>
+    <% @apps_to_show.each do |one_app| %>
+        <a href="<%= one_app.link %>">
+        <li class="appshape"> 
+           <div class="<%= one_app.color.downcase %>">
+              <p> 
+                 <span class="app-name" ><%= one_app.name %> </span> <br />
+                 <span class="app-desc"> <%= one_app.description %> </span>
+              </p>
+           </div>
+        </li>
+        </a>
+    <% end %>
+ </ol>
+
+
+<p><span> <%= link_to "Add App(s)", user_apps_add_url %>       </span></p>
+<p><span> <%= link_to "Remove App(s)", user_apps_remove_url %> </span></p>
 
 <span> <%= button_to "Log Out", logout_path, method: :delete %> </span>

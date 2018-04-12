@@ -13,9 +13,8 @@
          <% end %>
 
          <% @can_be_added.each do | one_app | %>
-            <li>
-                <span> name: <%= one_app.name %> <span>
-                <span> description: <%= one_app.description %> </span>
+            <li class="add_or_remove">
+                <span> <%= one_app.name %> </span>
                 <%= form_for(:app_to_add, url: user_apps_add_app_path) do |f| %>
                     <%= f.hidden_field :app_to_add, :value => one_app.id %>
                     <%= f.submit "Add App", class: "btn-link" %>

@@ -1,3 +1,35 @@
 // Place all the styles related to the Homepage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+li.appshape { display: block; }
+
+li.appshape > div {
+    height: 5em; 
+    width: 15em;
+} 
+
+li.appshape > div > p {
+    padding-top: 1em;
+    padding-left: 1em;
+}
+
+ol > a  { 
+   text-decoration: none
+}
+
+.red { background-color: red; }
+
+.yellow { background-color: yellow; }
+
+.purple { background-color: mediumorchid; }
+
+.blue { background-color: skyblue; }
+
+.green { background-color: green; }
+
+span.app-name { font-weight: bold;
+                color: black;
+               }
+
+
