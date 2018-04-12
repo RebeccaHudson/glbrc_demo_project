@@ -7,6 +7,11 @@
 <li> Show the id of the user who is logged in  </li>
 <li> Show the apps available that this user does not have 
      <ul>
+
+         <% if (@can_be_added.empty?) %>
+            No apps are available to add. They have all been added!
+         <% end %>
+
          <% @can_be_added.each do | one_app | %>
             <li>
                 <span> name: <%= one_app.name %> <span>
