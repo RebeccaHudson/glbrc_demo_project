@@ -17,6 +17,9 @@
   <li> Show apps available for this user.                       
        Apps available:
        <ol>
+          <% if (@apps_to_show.empty?) %>
+              <p>There are no apps on your homepage. Add apps to see apps.</p>
+          <% end %>
           <% @apps_to_show.each do |one_app| %>
               <li><span> name : <%= one_app.name %></span>
                   <span> description: <%= one_app.description %></span>

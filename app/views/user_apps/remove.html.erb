@@ -12,7 +12,7 @@
    </ol>
    <ul>
    <% if (@apps_user_has.empty?) %>
-       No apps are available to remove. They have all been removed!
+       <p>No apps are available to remove. They have all been removed!</p>
    <% end %>
 
    <% @apps_user_has.each do | one_app | %>
@@ -26,10 +26,8 @@
       </li>
    <% end %>
 
-
-
-
 </li>
+<li> <%= link_to "Use Defaults", user_apps_use_defaults_url, method: :get %> </li>
 </ol>
 <span> back home? : <%= link_to "Back Home", home_url %>  </span>   
 

@@ -55,8 +55,6 @@ class UserAppsController < ApplicationController
          #do not allow this to be added.
          puts "can not add user app"
      end
-
-
   end
 
   def remove
@@ -84,7 +82,9 @@ class UserAppsController < ApplicationController
               end
           end
        end
-       redirect_to session[:return_to] ||= request.referer
+       puts "request.referer : " + request.referer
+       #redirect_to session[:return_to] ||= request.referer
+       redirect_to request.referer
   end
 
  end
