@@ -4,8 +4,10 @@ class ApplicationController < ActionController::Base
   def hello_world_action
       render html: "hello world first action."
   end
-
-
+ 
+  def redirect_to_login
+      redirect_to login_path
+  end
  
   include SessionsHelper
 
