@@ -4,8 +4,16 @@
 <% provide(:title, "Log in") %>
 <h1>Log in</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+
+<div>
+    <!-- block below lifted from stackoverflow.com/questions/9390778/best-practice-method-of-displaying-flash-messages/9421984 -->
+    <% flash.each do |key, value| %>
+      <%= content_tag :div, value, class: "flash #{key}" %>
+    <% end %>
+</div>
+
+<div>
+  <div>
     <%= form_for(:session, url: login_path) do |f| %>
 
       <%= f.label :login %>
@@ -16,6 +24,7 @@
 
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
-
   </div>
 </div>
+
+

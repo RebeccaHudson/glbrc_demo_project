@@ -26,7 +26,7 @@ class UserAppsController < ApplicationController
 
 
   def add_default(app)
-     @user_id = session[:user_id]
+     #@user_id = session[:user_id]
      @app_id = app.id
      puts "adding default app" + @app_id.to_s + " user " + @user_id.to_s
 
@@ -59,15 +59,17 @@ class UserAppsController < ApplicationController
   end
 
   def use_defaults
+       @user_id = session[:user_id]
        puts "using defaults *********************"
        Application.all.each do |one_app|
           puts "checking out one app ********************"
           if one_app.is_default?
              add_default(one_app)
-  #           #see that it's added
-  #        else
-  #           puts "not default"
-  #           #see that it's not in there 
+          else
+              user_has = UserApp.where(user_id: @user_id, link_id: one_app.id) 
+              if !user_has.empty?
+                  user_has.first.destroy
+              end
           end
        end
        redirect_to session[:return_to] ||= request.referer
