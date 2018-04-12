@@ -9,6 +9,18 @@ class UserAppsController < ApplicationController
        @can_be_added = all_apps - apps_user_has
   end
 
+  def remove_app
+     @user_id = session[:user_id]
+     @id_of_app_to_remove = params[:app_to_remove][:app_to_remove].to_i
+     app_to_remove = Application.find(@id_of_app_to_remove)
+     if !app_to_remove.nil?
+         to_remove = UserApp.where(user_id: @user_id, link_id: @id_of_app_to_remove).first
+         to_remove.destroy
+     end
+     redirect_to user_apps_remove_url
+  end
+
+
   def add_app
      @user_id = session[:user_id]
      @id_of_app_to_add =  params[:app_to_add][:app_to_add].to_i

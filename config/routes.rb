@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'user_apps/add'
   post 'user_apps/add_app'
   get 'user_apps/remove'
+  post 'user_apps/remove_app'
   get 'user_apps/reorder'
   get 'user_apps/use_defaults'
 

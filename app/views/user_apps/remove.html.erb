@@ -5,11 +5,30 @@
 <ol>                  
 <li> Show the id of the user who is logged in  </li>
 <li> Show the apps available that this user has </li>
-<li> provide a link on each available app that does the following </li>
+<li> provide a link on each available app that does the following 
    <ol>
       <li> Deletes a UserApp record for this user and this app.        </li>
       <li> Removes that App from the list of apps available to remove. </li>
    </ol>
+   <ul>
+   <% if (@apps_user_has.empty?) %>
+       No apps are available to remove. They have all been removed!
+   <% end %>
+
+   <% @apps_user_has.each do | one_app | %>
+      <li>
+        <span> name: <%= one_app.name %> <span> 
+        <span> description: <%= one_app.description %> </span> 
+         <%= form_for(:app_to_remove, url: user_apps_remove_app_path) do |f| %>
+           <%= f.hidden_field :app_to_remove, :value => one_app.id %> 
+           <%= f.submit "Remove App", class: "btn-link" %>
+         <% end %>
+      </li>
+   <% end %>
+
+
+
+
 </li>
 </ol>
 <span> back home? : <%= link_to "Back Home", home_url %>  </span>   
