@@ -16,7 +16,7 @@ How to run the application:
    2. Navigate to the project root directory and run 'bundle install'.
 
    3. Setup the database by copying the sqlite3 file.
-      cp db/sample-data.sqlite3 db/development.sqlite3.keep
+      cp db/sample-data.sqlite3.keep db/development.sqlite3
          
    4. Run the command 'rails server'.
 
