@@ -21,4 +21,11 @@
 
 $(function() {
   $('.sortable').railsSortable();
+  /* allow elements to be moved left and right as well as up and down */
+  $( ".sortable" ).sortable( "option", "axis", null );
+  $( ".selector" ).sortable( "option", "distance", 15 );
+  $( ".selector" ).sortable( "option", "placeholder", "sort-placeholder");
+  $( ".selector" ).sortable( "option", "forcePlaceholderSize", true );
+  $( ".selector" ).sortable( "option", "grid", [ 2, 3 ] );
+  alert("sortable has loaded.");
 });

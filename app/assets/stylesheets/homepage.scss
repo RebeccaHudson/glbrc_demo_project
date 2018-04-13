@@ -18,9 +18,11 @@ ol > a  {
    text-decoration: none
 }
 
+/* the standard colors used for 'yellow', 'blue' and 'purple' have been 
+   swapped for some with better contrast for black text */ 
 .red { background-color: red; }
 
-.yellow { background-color: yellow; }
+.yellow { background-color: gold; }
 
 .purple { background-color: mediumorchid; }
 
@@ -32,4 +34,19 @@ span.app-name { font-weight: bold;
                 color: black;
                }
 
+table, tbody, tfoot, tr, td { display: block; } 
+/*Read more: https://html.com/tables/styling/#ixzz5CYgTgMJM*/
 
+table { max-width: 80%; }
+   
+tr { margin: 1em;
+     padding: 1em;
+     display: inline-block;
+     border-radius: 8px;
+   }
+
+.sort-placeholder {
+    height: 1.5em; width:  1.5em;
+    background-color: gray;
+    border: 1px;
+ }
