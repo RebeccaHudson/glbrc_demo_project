@@ -19,23 +19,20 @@
 </ol>
 
  Apps available:
- <ol>
-    <% if (@apps_to_show.empty?) %>
-        <p>There are no apps on your homepage. Add apps to see apps.</p>
+ <% if (@apps_to_show.empty?) %>
+      <p>There are no apps on your homepage. Add apps to see apps.</p>
+ <% end %>
+ <table> 
+ <tbody class="sortable">
+    <% @user_apps_to_show.each_with_sortable_id do |one_app, sortable_id| %>
+        <% the_app = Application.find(one_app.link_id) %>
+        <tr id="<%= sortable_id %>" class="<%= the_app.color.downcase %>" > 
+           <td> <a href="<%= the_app.link %>"> <%= the_app.name %> </a> </td>
+           <td> <%= the_app.description %>
+        </tr>
     <% end %>
-    <% @apps_to_show.each do |one_app| %>
-        <a href="<%= one_app.link %>">
-        <li class="appshape"> 
-           <div class="<%= one_app.color.downcase %>">
-              <p> 
-                 <span class="app-name" ><%= one_app.name %> </span> <br />
-                 <span class="app-desc"> <%= one_app.description %> </span>
-              </p>
-           </div>
-        </li>
-        </a>
-    <% end %>
- </ol>
+  </tbody>
+  </table>
 
 
 <p><span> <%= link_to "Add App(s)", user_apps_add_url %>       </span></p>

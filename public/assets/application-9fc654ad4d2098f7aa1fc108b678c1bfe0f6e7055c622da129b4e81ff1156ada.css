@@ -1,0 +1,77 @@
+/* line 5, /home/fatty/rails-env/glbrc_demo_project/app/assets/stylesheets/homepage.scss */
+li.appshape {
+  display: block;
+}
+
+/* line 7, /home/fatty/rails-env/glbrc_demo_project/app/assets/stylesheets/homepage.scss */
+li.appshape > div {
+  height: 5em;
+  width: 15em;
+}
+
+/* line 12, /home/fatty/rails-env/glbrc_demo_project/app/assets/stylesheets/homepage.scss */
+li.appshape > div > p {
+  padding-top: 1em;
+  padding-left: 1em;
+}
+
+/* line 17, /home/fatty/rails-env/glbrc_demo_project/app/assets/stylesheets/homepage.scss */
+ol > a {
+  text-decoration: none;
+}
+
+/* line 21, /home/fatty/rails-env/glbrc_demo_project/app/assets/stylesheets/homepage.scss */
+.red {
+  background-color: red;
+}
+
+/* line 23, /home/fatty/rails-env/glbrc_demo_project/app/assets/stylesheets/homepage.scss */
+.yellow {
+  background-color: yellow;
+}
+
+/* line 25, /home/fatty/rails-env/glbrc_demo_project/app/assets/stylesheets/homepage.scss */
+.purple {
+  background-color: mediumorchid;
+}
+
+/* line 27, /home/fatty/rails-env/glbrc_demo_project/app/assets/stylesheets/homepage.scss */
+.blue {
+  background-color: skyblue;
+}
+
+/* line 29, /home/fatty/rails-env/glbrc_demo_project/app/assets/stylesheets/homepage.scss */
+.green {
+  background-color: green;
+}
+
+/* line 31, /home/fatty/rails-env/glbrc_demo_project/app/assets/stylesheets/homepage.scss */
+span.app-name {
+  font-weight: bold;
+  color: black;
+}
+/* line 5, /home/fatty/rails-env/glbrc_demo_project/app/assets/stylesheets/user_apps.scss */
+li.add_or_remove > form {
+  display: inline;
+}
+
+/* line 7, /home/fatty/rails-env/glbrc_demo_project/app/assets/stylesheets/user_apps.scss */
+li.add_or_remove {
+  margin: 1em;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
