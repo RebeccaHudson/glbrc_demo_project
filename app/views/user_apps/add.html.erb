@@ -1,38 +1,32 @@
-<h1>UserApps#add</h1>
-<p>Find me in app/views/user_apps/add.html.erb</p>
+<h2>Add Apps for <%= @user.login %> </h2>
 
-<p> A page to add apps for this user: <%= @user_shown %>  </p>
-<h2> TODOs: </h2>
-<ol>
-<li> Show the id of the user who is logged in  </li>
-<li> Show the apps available that this user does not have 
-     <ul>
+<p> 
+   Select "Add App" next to the name of each app you want to add. 
+</p>
 
-         <% if (@can_be_added.empty?) %>
-            No apps are available to add. They have all been added!
-         <% end %>
+<% if (@can_be_added.empty?) %>
+   No apps are available to add. They have all been added!
+<% end %>
+<ul>
+<% @can_be_added.each do | one_app | %>
+       <li class="add_or_remove">
+           <span> <%= one_app.name %> </span>
+           <%= form_for(:app_to_add, url: user_apps_add_app_path) do |f| %>
+               <%= f.hidden_field :app_to_add, :value => one_app.id %>
+               <%= f.submit "Add App", class: "btn-link" %>
+           <% end %>
+       </li>
+    <% end %>
+</ul>
 
-         <% @can_be_added.each do | one_app | %>
-            <li class="add_or_remove">
-                <span> <%= one_app.name %> </span>
-                <%= form_for(:app_to_add, url: user_apps_add_app_path) do |f| %>
-                    <%= f.hidden_field :app_to_add, :value => one_app.id %>
-                    <%= f.submit "Add App", class: "btn-link" %>
-                <% end %>
-            </li>
-         <% end %>
-     </ul>
-</li>
-<li> provide a link on each available app that does the following  
-    <ol> 
-      <li> Creates a UserApp record for this user and this app.      </li>
-      <li> Removes that App from the list of apps available to add.  </li>
-    </ol>
-</li>
-<li> Add a reset to defaults link <%= link_to "Use Defaults", user_apps_use_defaults_url, method: :get%> </li>
-    
-</ol>
+<p>
+<%= link_to "Use Defaults", user_apps_use_defaults_url, method: :get%> 
+</p>
 
-<span> back home? : <%= link_to "Back Home", home_url,  data: { turbolinks: false } %>  </span>
+<p>
+  <span> 
+    <%= link_to "Back Home", home_url,  data: { turbolinks: false } %> 
+  </span>
+</p>
 
 

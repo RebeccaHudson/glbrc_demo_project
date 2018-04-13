@@ -1,6 +1,7 @@
 class UserAppsController < ApplicationController
   def add
        @user_id = session[:user_id]
+       @user = User.find(@user_id)
        all_apps = Application.all
        apps_user_has = []
        User.find(@user_id).user_apps.each do |uapp| 
@@ -23,6 +24,7 @@ class UserAppsController < ApplicationController
 
   def add_app
      @user_id = session[:user_id]
+
      @id_of_app_to_add =  params[:app_to_add][:app_to_add].to_i
      @app_to_add = Application.find(@id_of_app_to_add) 
      if !@app_to_add.nil?
@@ -41,7 +43,6 @@ class UserAppsController < ApplicationController
      #@user_id = session[:user_id]
      @app_id = app.id
      puts "adding default app" + @app_id.to_s + " user " + @user_id.to_s
-
      if @app_id.nil?
        raise Exception
      #  #clean this part up if possible.
@@ -59,6 +60,7 @@ class UserAppsController < ApplicationController
 
   def remove
        @user_id = session[:user_id]
+       @user = User.find(@user_id)
        @apps_user_has = []
        User.find(@user_id).user_apps.each do |uapp| 
           @apps_user_has << Application.find(uapp.link_id)
