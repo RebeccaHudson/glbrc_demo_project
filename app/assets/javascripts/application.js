@@ -27,5 +27,4 @@ $(function() {
   $( ".selector" ).sortable( "option", "placeholder", "sort-placeholder");
   $( ".selector" ).sortable( "option", "forcePlaceholderSize", true );
   $( ".selector" ).sortable( "option", "grid", [ 2, 3 ] );
-  alert("sortable has loaded.");
 });
