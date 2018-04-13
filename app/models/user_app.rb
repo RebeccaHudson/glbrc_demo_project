@@ -4,8 +4,13 @@ class UserApp < ApplicationRecord
     #use has_one if this relation doesn't work:
     has_one :application
 
-    include RailsSortable::Model
-    set_sortable :sort  # Indicate a sort column
+    validates :user_id, presence: true
+    validates :link_id, presence: true
 
-    #validate that each of the referred objects can be found?
+    #each should have a unique pair of user_id, link_id.
+    validates :link_id, uniqueness: { scope: :user_id }
+
+    include RailsSortable::Model
+    set_sortable :sort  
+
 end
