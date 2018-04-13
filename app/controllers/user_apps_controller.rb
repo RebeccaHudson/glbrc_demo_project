@@ -67,9 +67,6 @@ class UserAppsController < ApplicationController
        end 
   end
 
-  def reorder
-  end
-
   def use_defaults
        @user_id = session[:user_id]
        puts "using defaults *********************"
