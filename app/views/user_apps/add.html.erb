@@ -1,12 +1,13 @@
 <h2>Add Apps for <%= @user.login %> </h2>
 
-<p> 
-   Select "Add App" next to the name of each app you want to add. 
-</p>
+
 
 <% if (@can_be_added.empty?) %>
    No apps are available to add. They have all been added!
-<% end %>
+<% else %>
+<p> 
+   Select "Add App" next to the name of each app you want to add. 
+</p>
 <ul>
 <% @can_be_added.each do | one_app | %>
        <li class="add_or_remove">
@@ -18,6 +19,7 @@
        </li>
     <% end %>
 </ul>
+<% end %>
 
 <p>
 <%= link_to "Use Defaults", user_apps_use_defaults_url, method: :get%> 

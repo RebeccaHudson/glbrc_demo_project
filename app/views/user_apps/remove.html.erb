@@ -1,34 +1,34 @@
-<h1>UserApps#remove</h1>
-<p>Find me in app/views/user_apps/remove.html.erb</p>
-<p> A page to remove apps for this user: <%= @user_shown %>  </p>
-<h2> TODOs: </h2>
-<ol>                  
-<li> Show the id of the user who is logged in  </li>
-<li> Show the apps available that this user has </li>
-<li> provide a link on each available app that does the following 
-   <ol>
-      <li> Deletes a UserApp record for this user and this app.        </li>
-      <li> Removes that App from the list of apps available to remove. </li>
-   </ol>
-   <ul>
-   <% if (@apps_user_has.empty?) %>
-       <p>No apps are available to remove. They have all been removed!</p>
-   <% end %>
+<h2>Remove Apps for <%= @user.login %> </h2>
 
+<% if (@apps_user_has.empty?) %>
+    <p>No apps are available to remove. They have all been removed!</p>
+<% else %>
+
+  <p> 
+     Select "Remove App" next to the name of each app you want to remove. 
+  </p>
+  
+   <ul>
    <% @apps_user_has.each do | one_app | %>
-      <li>
-        <span> name: <%= one_app.name %> <span> 
-        <span> description: <%= one_app.description %> </span> 
-         <%= form_for(:app_to_remove, url: user_apps_remove_app_path) do |f| %>
+      <li class="add_or_remove">
+        <span> name: <%= one_app.name %> </span> 
+        <%= form_for(:app_to_remove, url: user_apps_remove_app_path) do |f| %>
            <%= f.hidden_field :app_to_remove, :value => one_app.id %> 
            <%= f.submit "Remove App", class: "btn-link" %>
          <% end %>
       </li>
    <% end %>
+   </ul>
+<% end %>
 
-</li>
-<li> <%= link_to "Use Defaults", user_apps_use_defaults_url, method: :get %> </li>
-</ol>
-<span> back home? : <%= link_to "Back Home", home_url, data: { turbolinks: false } %>  </span>   
+<p>
+   <%= link_to "Use Defaults", user_apps_use_defaults_url, method: :get %> 
+</p>
+
+<p>
+   <span>
+      <%= link_to "Back Home", home_url, data: { turbolinks: false } %>  
+   </span>   
+</p>
 
 
