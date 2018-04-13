@@ -5,20 +5,20 @@
 <% if (@can_be_added.empty?) %>
    No apps are available to add. They have all been added!
 <% else %>
-<p> 
-   Select "Add App" next to the name of each app you want to add. 
-</p>
-<ul>
-<% @can_be_added.each do | one_app | %>
-       <li class="add_or_remove">
-           <span> <%= one_app.name %> </span>
-           <%= form_for(:app_to_add, url: user_apps_add_app_path) do |f| %>
-               <%= f.hidden_field :app_to_add, :value => one_app.id %>
-               <%= f.submit "Add App", class: "btn-link" %>
-           <% end %>
-       </li>
-    <% end %>
-</ul>
+  <p> 
+     Select "Add App" next to the name of each app you want to add. 
+  </p>
+  <ul>
+  <% @can_be_added.each do | one_app | %>
+         <li class="add_or_remove">
+             <span> <%= one_app.name %> </span>
+             <%= form_for(:app_to_add, url: user_apps_add_app_path) do |f| %>
+                 <%= f.hidden_field :app_to_add, :value => one_app.id %>
+                 <%= f.submit "Add App", class: "btn-link" %>
+             <% end %>
+         </li>
+      <% end %>
+  </ul>
 <% end %>
 
 <p>
@@ -31,4 +31,4 @@
   </span>
 </p>
 
-
+ <p> <%= button_to "Log Out", logout_path, method: :delete %> </p>
