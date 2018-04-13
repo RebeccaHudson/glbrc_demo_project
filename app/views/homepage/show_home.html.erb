@@ -25,7 +25,7 @@
     <% end %>
     <% @apps_to_show.each do |one_app| %>
         <a href="<%= one_app.link %>">
-        <li class="appshape"> 
+        <li draggable="true" class="appshape"> 
            <div class="<%= one_app.color.downcase %>">
               <p> 
                  <span class="app-name" ><%= one_app.name %> </span> <br />
