@@ -2,21 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-li.appshape { display: block; }
-
-li.appshape > div {
-    height: 5em; 
-    width: 15em;
-} 
-
-li.appshape > div > p {
-    padding-top: 1em;
-    padding-left: 1em;
-}
-
-ol > a  { 
-   text-decoration: none
-}
 
 /* the standard colors used for 'yellow', 'blue' and 'purple' have been 
    swapped for some with better contrast for black text */ 
@@ -35,7 +20,6 @@ span.app-name { font-weight: bold;
                }
 
 table, tbody, tfoot, tr, td { display: block; } 
-/*Read more: https://html.com/tables/styling/#ixzz5CYgTgMJM*/
 
 table { max-width: 80%; }
    
@@ -47,6 +31,4 @@ tr { margin: 1em;
 
 .sort-placeholder {
     height: 1.5em; width:  1.5em;
-    background-color: gray;
-    border: 1px;
  }
