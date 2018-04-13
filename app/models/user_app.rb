@@ -1,7 +1,5 @@
 class UserApp < ApplicationRecord
     belongs_to :user
-
-    #use has_one if this relation doesn't work:
     has_one :application
 
     validates :user_id, presence: true
